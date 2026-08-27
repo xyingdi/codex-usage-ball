@@ -11,7 +11,7 @@
 
 ## 下载
 
-下载 `Codex-Usage-Ball-v1.8.8-win-x64.exe` 即可运行。`使用说明.md` 包含完整中文操作说明，`SHA256.txt` 用于校验文件完整性。
+下载 `Codex-Usage-Ball-v1.8.8-win-x64.exe` 即可运行。`README.zh-CN.md` 包含完整中文操作说明，`SHA256.txt` 用于校验文件完整性。
 
 ## 运行要求
 
