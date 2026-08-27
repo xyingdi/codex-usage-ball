@@ -50,7 +50,7 @@ public partial class MainWindow : Window
     private bool _isExiting;
     private bool _hiddenByCodex;
     private bool _codexWasRunning;
-    private bool _manualVisibilityOverride;
+    private bool _manualVisibilityOverrideUntilCodexRuns;
     private bool _codexVisibilityTransitioning;
     private string _actualTheme = "Dark";
     private double _pointerStartLeft;
@@ -61,7 +61,7 @@ public partial class MainWindow : Window
     public MainWindow(bool startupLaunch = false)
     {
         _startupLaunch = startupLaunch;
-        _manualVisibilityOverride = !startupLaunch;
+        _manualVisibilityOverrideUntilCodexRuns = false;
         _settings = _settingsService.Load();
         if (_settings.AutoShowWithCodex && !SettingsService.SetStartWithWindows(true))
         {
@@ -215,6 +215,7 @@ public partial class MainWindow : Window
             if (running)
             {
                 _codexClosedAt = null;
+                _manualVisibilityOverrideUntilCodexRuns = false;
                 if (!_codexWasRunning && _hiddenByCodex) await ShowForCodexAsync();
                 _codexWasRunning = true;
             }
@@ -223,7 +224,7 @@ public partial class MainWindow : Window
                 if (_codexWasRunning) _codexClosedAt = DateTimeOffset.Now;
                 _codexWasRunning = false;
                 if (_settings.HideWhenCodexCloses
-                    && !_manualVisibilityOverride
+                    && !_manualVisibilityOverrideUntilCodexRuns
                     && !_hiddenByCodex
                     && _codexClosedAt.HasValue
                     && DateTimeOffset.Now - _codexClosedAt.Value >= CodexCloseHideDelay
@@ -720,7 +721,7 @@ public partial class MainWindow : Window
 
     private void MarkManualVisibilityOverride()
     {
-        _manualVisibilityOverride = true;
+        _manualVisibilityOverrideUntilCodexRuns = true;
         _hiddenByCodex = false;
         _codexClosedAt = null;
     }

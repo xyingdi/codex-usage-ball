@@ -39,7 +39,7 @@ try {
     $mint = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(185, 245, 200))
     $muted = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(190, 202, 201, 194))
 
-    $graphics.DrawString("CODEX USAGE BALL  ·  v1.8.7", $eyebrowFont, $mint, 72, 94)
+    $graphics.DrawString("CODEX USAGE BALL  ·  v1.8.8", $eyebrowFont, $mint, 72, 94)
     $graphics.DrawString("Codex 用量悬浮球", $titleFont, $white, 66, 139)
     $graphics.DrawString("剩余额度，一眼就懂。", $subtitleFont, $white, 72, 236)
     $graphics.DrawString("Windows 10/11  ·  便携单文件  ·  本地读取", $smallFont, $muted, 73, 292)
@@ -71,7 +71,23 @@ try {
 
     $ballImage = [System.Drawing.Image]::FromFile($ballPath)
     try {
-        $graphics.DrawImage($ballImage, 1032, 432, 160, 160)
+        $maskedBall = New-Object System.Drawing.Bitmap 128, 128, ([System.Drawing.Imaging.PixelFormat]::Format32bppArgb)
+        $ballGraphics = [System.Drawing.Graphics]::FromImage($maskedBall)
+        $ballClip = New-Object System.Drawing.Drawing2D.GraphicsPath
+        try {
+            $ballGraphics.SmoothingMode = [System.Drawing.Drawing2D.SmoothingMode]::AntiAlias
+            $ballGraphics.InterpolationMode = [System.Drawing.Drawing2D.InterpolationMode]::HighQualityBicubic
+            $ballGraphics.Clear([System.Drawing.Color]::Transparent)
+            $ballClip.AddEllipse(1, 1, 126, 126)
+            $ballGraphics.SetClip($ballClip)
+            $ballGraphics.DrawImage($ballImage, 0, 0, 128, 128)
+            $graphics.DrawImage($maskedBall, 1032, 432, 160, 160)
+        }
+        finally {
+            $ballClip.Dispose()
+            $ballGraphics.Dispose()
+            $maskedBall.Dispose()
+        }
     }
     finally {
         $ballImage.Dispose()

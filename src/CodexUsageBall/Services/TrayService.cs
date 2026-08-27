@@ -65,6 +65,20 @@ public sealed class TrayService : IDisposable
 
     private static Icon CreateIcon()
     {
+        try
+        {
+            var executable = Environment.ProcessPath;
+            if (!string.IsNullOrWhiteSpace(executable))
+            {
+                using var associatedIcon = Icon.ExtractAssociatedIcon(executable);
+                if (associatedIcon is not null) return (Icon)associatedIcon.Clone();
+            }
+        }
+        catch
+        {
+            // Fall back to the lightweight generated icon below.
+        }
+
         using var bitmap = new Bitmap(64, 64, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
         using var graphics = Graphics.FromImage(bitmap);
         graphics.SmoothingMode = SmoothingMode.AntiAlias;

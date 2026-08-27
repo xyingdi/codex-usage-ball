@@ -190,7 +190,7 @@ public sealed class CodexAppServerClient : IAsyncDisposable
                         {
                             name = "codex_usage_ball",
                             title = "Codex Usage Ball",
-                            version = "1.8.7"
+                            version = "1.8.8"
                         }
                     },
                     TimeSpan.FromSeconds(20),

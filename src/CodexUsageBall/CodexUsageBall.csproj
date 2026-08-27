@@ -9,6 +9,7 @@
     <AssemblyName>CodexUsageBall</AssemblyName>
     <RootNamespace>CodexUsageBall</RootNamespace>
     <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Assets\AppIcon.ico</ApplicationIcon>
     <NoWarn>$(NoWarn);WFAC010;CA1001;CA1838</NoWarn>
     <Platforms>x64</Platforms>
     <PlatformTarget>x64</PlatformTarget>
@@ -18,7 +19,7 @@
     <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
     <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
     <PublishReadyToRun>false</PublishReadyToRun>
-    <Version>1.8.7</Version>
+    <Version>1.8.8</Version>
     <AnalysisLevel>latest-recommended</AnalysisLevel>
     <Company>Codex Usage Ball</Company>
     <Product>Codex Usage Ball</Product>

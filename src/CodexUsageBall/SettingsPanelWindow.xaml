@@ -230,7 +230,7 @@
             </ScrollViewer>
 
             <Grid Grid.Row="2" Margin="18,8,18,12">
-                <TextBlock Text="Codex Usage Ball 1.8.7" FontSize="10" Foreground="{DynamicResource SubtleBrush}" VerticalAlignment="Center" />
+                <TextBlock Text="Codex Usage Ball 1.8.8" FontSize="10" Foreground="{DynamicResource SubtleBrush}" VerticalAlignment="Center" />
                 <Button x:Name="ExitButton" Content="退出程序" HorizontalAlignment="Right"
                         Style="{StaticResource FooterButton}" Click="ExitButton_OnClick" />
             </Grid>
