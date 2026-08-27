@@ -15,7 +15,7 @@
 
 ## 下载
 
-下载 `Codex 用量悬浮球.exe` 即可运行。`使用说明.md` 包含完整操作说明，`SHA256.txt` 用于校验文件完整性。
+下载 `Codex-Usage-Ball-v1.8.7-win-x64.exe` 即可运行。`README.zh-CN.md` 包含完整中文操作说明，`SHA256.txt` 用于校验文件完整性。
 
 ## 运行要求
 
@@ -25,4 +25,3 @@
 ## 注意
 
 这是第三方开源工具，不是 OpenAI 或 Codex 官方产品。当前可执行文件未使用商业代码签名证书，Windows 首次运行时可能出现 SmartScreen 提示。
-

@@ -71,7 +71,7 @@ Codex 的用量本来不复杂，真正麻烦的是每次都要停下工作、�
 ## 下载与使用
 
 1. 打开 [最新 Release](https://github.com/xyingdi/codex-usage-ball/releases/latest)。
-2. 下载 `Codex 用量悬浮球.exe`；如需校验，可同时下载 `SHA256.txt`。
+2. 下载 `Codex-Usage-Ball-v1.8.7-win-x64.exe`；如需校验，可同时下载 `SHA256.txt`。
 3. 确保 Codex 桌面应用已经安装并登录，然后双击运行。
 
 程序是自包含的 Windows x64 单文件，不需要安装，也不需要另外安装 .NET。设置保存在：
@@ -117,4 +117,3 @@ SHA-256 用来确认文件没有损坏或被替换，不等同于代码签名。
 ## 许可与致谢
 
 源码采用 [MIT License](LICENSE)。本项目与 OpenAI 无隶属或背书关系；Codex、OpenAI 等名称及标识归其各自权利人所有。
-
