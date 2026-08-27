@@ -1,0 +1,11 @@
+**/bin/
+**/obj/
+artifacts/
+release/
+.vs/
+.idea/
+*.user
+*.suo
+*.pdb
+*.tmp
+

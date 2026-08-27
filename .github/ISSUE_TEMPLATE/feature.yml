@@ -1,0 +1,25 @@
+name: 功能建议
+description: 建议一个能让悬浮球更有用、更轻量的改进
+title: "[建议] "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: 你遇到的问题
+      description: 先说明使用场景，以及现有方式哪里不方便。
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 你的建议
+      description: 描述理想的交互或结果。
+    validations:
+      required: true
+  - type: textarea
+    id: lightweight
+    attributes:
+      label: 对轻量性的影响
+      description: 如果功能会增加常驻资源占用，请说明你认为它为什么值得。
+
